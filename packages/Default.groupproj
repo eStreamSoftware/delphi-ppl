@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{002DE3BB-5806-4862-8E7A-FD2DCC078217}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DelphiPPL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DelphiPPLTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\demos\DelphiPPLDemos.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DelphiPPL">
+        <MSBuild Projects="DelphiPPL.dproj"/>
+    </Target>
+    <Target Name="DelphiPPL:Clean">
+        <MSBuild Projects="DelphiPPL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiPPL:Make">
+        <MSBuild Projects="DelphiPPL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiPPLTest">
+        <MSBuild Projects="DelphiPPLTest.dproj"/>
+    </Target>
+    <Target Name="DelphiPPLTest:Clean">
+        <MSBuild Projects="DelphiPPLTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiPPLTest:Make">
+        <MSBuild Projects="DelphiPPLTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelphiPPLDemos">
+        <MSBuild Projects="..\demos\DelphiPPLDemos.dproj"/>
+    </Target>
+    <Target Name="DelphiPPLDemos:Clean">
+        <MSBuild Projects="..\demos\DelphiPPLDemos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiPPLDemos:Make">
+        <MSBuild Projects="..\demos\DelphiPPLDemos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DelphiPPL;DelphiPPLTest;DelphiPPLDemos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DelphiPPL:Clean;DelphiPPLTest:Clean;DelphiPPLDemos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DelphiPPL:Make;DelphiPPLTest:Make;DelphiPPLDemos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
