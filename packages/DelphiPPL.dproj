@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{A36CFDC9-FF2B-46AD-BBC2-4B1C0F5055CB}</ProjectGuid>
         <MainSource>DelphiPPL.dpk</MainSource>
-        <ProjectVersion>19.0</ProjectVersion>
+        <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>

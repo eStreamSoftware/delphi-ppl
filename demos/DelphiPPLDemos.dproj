@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{681CC73E-6752-4C04-B399-E1E8A3227ED1}</ProjectGuid>
-        <ProjectVersion>19.0</ProjectVersion>
+        <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <MainSource>DelphiPPLDemos.dpr</MainSource>
         <Base>True</Base>
@@ -124,7 +124,6 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\source\System.ThreadingEx.pas"/>
-        <DCCReference Include="..\source\System.SyncObjs.RSP25999.pas"/>
         <DCCReference Include="DemoMainForm.pas">
             <Form>Form1</Form>
         </DCCReference>

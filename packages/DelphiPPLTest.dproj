@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{BB0D847A-2195-4740-9F17-04DE980BA1D7}</ProjectGuid>
-        <ProjectVersion>19.0</ProjectVersion>
+        <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -90,7 +90,6 @@
         </DelphiCompile>
         <DCCReference Include="..\testcase\System.ThreadingEx.TestCase.pas"/>
         <DCCReference Include="..\source\System.ThreadingEx.pas"/>
-        <DCCReference Include="..\source\System.SyncObjs.RSP25999.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
