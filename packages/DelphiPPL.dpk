@@ -26,7 +26,6 @@ package DelphiPPL;
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Delphi Parallel Programming Library Extension'}
-{$LIBSUFFIX '270'}
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
