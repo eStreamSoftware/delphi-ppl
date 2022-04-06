@@ -193,7 +193,9 @@ begin
     var o := Value.VObject as TValueStore;
     Result := o.Value;
     o.DisposeOf;
-  end else
+  end else if Value.VType = vtInterface then
+    Result := TVarRecValue<T>(IInterface(Value.VInterface))
+  else
     Result := TValue.FromVarRec(Value).AsType<T>;
 end;
 
