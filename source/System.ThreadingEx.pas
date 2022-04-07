@@ -176,7 +176,7 @@ end;
 class operator TVarRecValue<T>.Implicit(Value: TVarRecValue<T>): TVarRec;
 begin
   var o := PTypeInfo(TypeInfo(T));
-  if o.Kind in [tkRecord, tkArray, tkDynArray] then
+  if o.Kind in [tkRecord, tkArray, tkDynArray, tkMethod] then
     Result := TValue.From<TValueStore>(TValueStore.Create(Value.FValue)).AsVarRec
   else
     Result := TValue.From<T>(Value.FValue).AsVarRec;
