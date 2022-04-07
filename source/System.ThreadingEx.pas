@@ -143,6 +143,7 @@ type
     procedure Async<T1, T2, T3>(Proc: TProc<T1,T2,T3>; P1: T1; P2: T2; P3: T3);
         overload;
     procedure Async<T1,T2>(Proc: TProc<T1,T2>; P1: T1; P2: T2); overload;
+    procedure Async<T>(Func: TFunc<T>); overload;
     procedure Async<T>(Proc: TProc<T>; P: T); overload;
     function BeginInvoke<T1, T2, T3>(Proc: TProc<T1,T2,T3>; P1: T1; P2: T2; P3:
         T3): IAsyncResult; overload;
@@ -469,6 +470,18 @@ begin
       EndInvoke(BeginInvoke<T1,T2>(aProc, aP1, aP2));
     end
     , Proc, P1, P2
+  );
+  TTask.CheckException(o);
+end;
+
+procedure TAsyncComponentHelper.Async<T>(Func: TFunc<T>);
+begin
+  var o: ITask := TTask.Create<TFunc<T>>(
+    procedure (aFunc: TFunc<T>)
+    begin
+      EndInvoke(BeginInvoke<T>(aFunc));
+    end
+    , Func
   );
   TTask.CheckException(o);
 end;
